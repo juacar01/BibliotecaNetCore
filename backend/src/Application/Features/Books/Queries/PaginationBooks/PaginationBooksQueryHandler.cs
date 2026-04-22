@@ -27,13 +27,19 @@ public class PaginationBooksQueryHandler : IRequestHandler<PaginationBooksQuery,
         {
             PageIndex = request.PageIndex,
             PageSize = request.PageSize,
-            Title = request.Title,
+            Search = request.Search,
             Sort = request.Sort,
-            AuthorId = request.AuthorId
+            Title = request.Title,
+            AuthorId = request.AuthorId,
+            IsDeleted = request.IsDeleted
+
         };
 
         var spec = new BookSpecification(BookEspecParams);
         var books = await _unitOfWork.Repository<Book>().GetAllWithSpec(spec);
+
+        //var books2 = await _unitOfWork.Repository<Book>().GetAllAsync();
+
 
         var specCount = new BookForCountingSpecification(BookEspecParams);
         var totalItems = await _unitOfWork.Repository<Book>().CountAsync(specCount);

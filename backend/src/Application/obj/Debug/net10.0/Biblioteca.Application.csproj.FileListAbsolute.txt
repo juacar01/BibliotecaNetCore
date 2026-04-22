@@ -15,3 +15,4 @@ D:\repos\biblioteca\backend\src\Application\obj\Debug\net10.0\Biblioteca.Applica
 D:\repos\biblioteca\backend\src\Application\obj\Debug\net10.0\ref\Biblioteca.Application.dll
 D:\repos\biblioteca\backend\src\Application\bin\Debug\net10.0\Biblioteca.Application.runtimeconfig.json
 D:\repos\biblioteca\backend\src\Application\obj\Debug\net10.0\Biblioteca.Application.genruntimeconfig.cache
+D:\repos\biblioteca\backend\src\Application\obj\Debug\net10.0\Biblioteca.Application.sourcelink.json

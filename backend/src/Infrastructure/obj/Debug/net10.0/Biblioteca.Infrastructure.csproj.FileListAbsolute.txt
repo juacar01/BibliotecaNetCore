@@ -17,3 +17,4 @@ D:\repos\biblioteca\backend\src\Infrastructure\obj\Debug\net10.0\Biblioteca.Infr
 D:\repos\biblioteca\backend\src\Infrastructure\obj\Debug\net10.0\ref\Biblioteca.Infrastructure.dll
 D:\repos\biblioteca\backend\src\Infrastructure\bin\Debug\net10.0\Biblioteca.Infrastructure.runtimeconfig.json
 D:\repos\biblioteca\backend\src\Infrastructure\obj\Debug\net10.0\Biblioteca.Infrastructure.genruntimeconfig.cache
+D:\repos\biblioteca\backend\src\Infrastructure\obj\Debug\net10.0\Biblioteca.Infrastructure.sourcelink.json

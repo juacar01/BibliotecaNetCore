@@ -8,4 +8,5 @@ public class PaginationBooksQuery: PaginationBaseQuery, IRequest<PaginationVm<Bo
 {
     public string? Title { get; set; }
     public int? AuthorId { get; set; }   
+    public bool? IsDeleted { get; set; }
 }

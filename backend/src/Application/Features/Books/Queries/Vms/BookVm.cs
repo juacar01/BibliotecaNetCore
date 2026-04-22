@@ -11,6 +11,7 @@ public class BookVm
     public string Genre { get; set; }
     public DateTime? PublishedDate { get; set; }
     public String CoverImagePath { get; set; }
+    public bool IsDeleted { get; set; }
 
 
 
