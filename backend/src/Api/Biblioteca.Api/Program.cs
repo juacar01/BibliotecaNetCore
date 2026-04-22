@@ -1,3 +1,4 @@
+using Biblioteca.Api.Middlewares;
 using Biblioteca.Api.Services;
 using Biblioteca.Application;
 using Biblioteca.Application.Features.Authors.Queries.GetAuthorList;
@@ -49,6 +50,9 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+//app.UseHttpsRedirection();
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.MapControllers();
 

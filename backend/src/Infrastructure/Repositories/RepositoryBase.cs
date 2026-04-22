@@ -171,5 +171,13 @@ public class RepositoryBase<T> : IAsyncRepository<T> where T : class
         return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
     }
 
-
+    public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default)
+    {
+        if (predicate == null) throw new ArgumentNullException(nameof(predicate));
+        return await _context
+            .Set<T>()
+            .AsNoTracking()
+            .AnyAsync(predicate, cancellationToken)
+            .ConfigureAwait(false);
+    }
 }

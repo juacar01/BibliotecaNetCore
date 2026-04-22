@@ -1,4 +1,5 @@
-﻿using Biblioteca.Domain;
+﻿using Biblioteca.Application.Features.Authors.Queries.Vms;
+using Biblioteca.Application.Features.Loans.Queries.Vms;
 
 namespace Biblioteca.Application.Features.Books.Queries.Vms;
 
@@ -17,10 +18,11 @@ public class BookVm
 
 
     // Navigation property for related author
-    public virtual Author Author { get; set; }
+    public virtual AuthorVm Author { get; set; }
 
-    // Navigation property for related loan
-    //public virtual List<Loan> Loans { get; set; } = new List<Loan>();
+    //public virtual ICollection<LoanVm>? Loans { get; set; }
+
+
 
     public DateTime? CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }

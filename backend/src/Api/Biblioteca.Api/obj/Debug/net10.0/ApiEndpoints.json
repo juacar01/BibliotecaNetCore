@@ -445,5 +445,169 @@
       }
     ],
     "EndpointName": "PaginationBook"
+  },
+  {
+    "ContainingType": "Biblioteca.Api.Controllers.LoanController",
+    "Method": "GetLoanById",
+    "RelativePath": "api/v1/Loan/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Biblioteca.Application.Features.Loans.Queries.Vms.LoanVm",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetLoanById"
+  },
+  {
+    "ContainingType": "Biblioteca.Api.Controllers.LoanController",
+    "Method": "RegisterLoanReturn",
+    "RelativePath": "api/v1/Loan/{id}/registerReturn",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Biblioteca.Application.Features.Loans.Commands.RegisterReturn.RegisterLoanReturnCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Biblioteca.Application.Features.Loans.Queries.Vms.LoanVm",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "RegisterReturn"
+  },
+  {
+    "ContainingType": "Biblioteca.Api.Controllers.LoanController",
+    "Method": "CreateLoan",
+    "RelativePath": "api/v1/Loan/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Biblioteca.Application.Features.Loans.Commands.CreateLoan.CreateLoanCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Biblioteca.Application.Features.Loans.Queries.Vms.LoanVm",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "CreateLoan"
+  },
+  {
+    "ContainingType": "Biblioteca.Api.Controllers.LoanController",
+    "Method": "GetLoans",
+    "RelativePath": "api/v1/Loan/list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[Biblioteca.Application.Features.Loans.Queries.Vms.LoanVm, Biblioteca.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetLoans"
+  },
+  {
+    "ContainingType": "Biblioteca.Api.Controllers.LoanController",
+    "Method": "PaginationLoan",
+    "RelativePath": "api/v1/Loan/pagination",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "BookId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "LoanDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DueDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Sort",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageIndex",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Biblioteca.Application.Shared.Queries.PaginationVm\u00601[[Biblioteca.Application.Features.Loans.Queries.Vms.LoanVm, Biblioteca.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "PaginationLoan"
   }
 ]

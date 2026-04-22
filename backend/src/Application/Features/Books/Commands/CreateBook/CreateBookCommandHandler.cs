@@ -7,7 +7,7 @@ using MediatR;
 
 namespace Biblioteca.Application.Features.Books.Commands;
 
-public class CreateBookCommandHandler: IRequestHandler<CreateBookCommand, BookVm>
+public class CreateBookCommandHandler : IRequestHandler<CreateBookCommand, BookVm>
 {
 
     private readonly IUnitOfWork _unitOfWork;

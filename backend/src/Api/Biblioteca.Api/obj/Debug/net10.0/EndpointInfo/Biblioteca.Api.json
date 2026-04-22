@@ -732,71 +732,307 @@
           }
         }
       }
+    },
+    "/api/v1/Loan/list": {
+      "get": {
+        "tags": [
+          "Loan"
+        ],
+        "operationId": "GetLoans",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LoanVm"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LoanVm"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LoanVm"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/Loan/pagination": {
+      "get": {
+        "tags": [
+          "Loan"
+        ],
+        "operationId": "PaginationLoan",
+        "parameters": [
+          {
+            "name": "BookId",
+            "in": "query",
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          },
+          {
+            "name": "LoanDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "DueDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "Search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginationVmOfLoanVm"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginationVmOfLoanVm"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginationVmOfLoanVm"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/Loan/create": {
+      "post": {
+        "tags": [
+          "Loan"
+        ],
+        "operationId": "CreateLoan",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLoanCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLoanCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLoanCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanVm"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanVm"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanVm"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/Loan/{id}": {
+      "get": {
+        "tags": [
+          "Loan"
+        ],
+        "operationId": "GetLoanById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanVm"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanVm"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanVm"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/Loan/{id}/registerReturn": {
+      "put": {
+        "tags": [
+          "Loan"
+        ],
+        "operationId": "RegisterReturn",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterLoanReturnCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterLoanReturnCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterLoanReturnCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanVm"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanVm"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanVm"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
-      "Author": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "lastName": {
-            "type": "string"
-          },
-          "biography": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "birthDate": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "format": "date-time"
-          },
-          "country": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "isDeleted": {
-            "type": "boolean"
-          },
-          "books": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Book"
-            }
-          },
-          "id": {
-            "pattern": "^-?(?:0|[1-9]\\d*)$",
-            "type": [
-              "integer",
-              "string"
-            ],
-            "format": "int32"
-          },
-          "createdAt": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "format": "date-time"
-          },
-          "updatedAt": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "format": "date-time"
-          }
-        }
-      },
       "AuthorVm": {
         "type": "object",
         "properties": {
@@ -835,83 +1071,6 @@
           },
           "isDeleted": {
             "type": "boolean"
-          },
-          "createdAt": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "format": "date-time"
-          },
-          "updatedAt": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "format": "date-time"
-          },
-          "books": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BookVm"
-            }
-          }
-        }
-      },
-      "Book": {
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string"
-          },
-          "numberOfPages": {
-            "pattern": "^-?(?:0|[1-9]\\d*)$",
-            "type": [
-              "integer",
-              "string"
-            ],
-            "format": "int32"
-          },
-          "genre": {
-            "type": "string"
-          },
-          "publishedDate": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "format": "date-time"
-          },
-          "coverImagePath": {
-            "type": "string"
-          },
-          "isDeleted": {
-            "type": "boolean"
-          },
-          "authorId": {
-            "pattern": "^-?(?:0|[1-9]\\d*)$",
-            "type": [
-              "integer",
-              "string"
-            ],
-            "format": "int32"
-          },
-          "author": {
-            "$ref": "#/components/schemas/Author"
-          },
-          "loans": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Loan"
-            }
-          },
-          "id": {
-            "pattern": "^-?(?:0|[1-9]\\d*)$",
-            "type": [
-              "integer",
-              "string"
-            ],
-            "format": "int32"
           },
           "createdAt": {
             "type": [
@@ -968,7 +1127,7 @@
             "type": "boolean"
           },
           "author": {
-            "$ref": "#/components/schemas/Author"
+            "$ref": "#/components/schemas/AuthorVm"
           },
           "createdAt": {
             "type": [
@@ -1016,13 +1175,17 @@
           }
         }
       },
-      "IFormFile": {
-        "type": "string",
-        "format": "binary"
-      },
-      "Loan": {
+      "CreateLoanCommand": {
         "type": "object",
         "properties": {
+          "id": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
           "bookId": {
             "pattern": "^-?(?:0|[1-9]\\d*)$",
             "type": [
@@ -1050,15 +1213,14 @@
             "format": "date-time"
           },
           "book": {
-            "$ref": "#/components/schemas/Book"
-          },
-          "id": {
-            "pattern": "^-?(?:0|[1-9]\\d*)$",
-            "type": [
-              "integer",
-              "string"
-            ],
-            "format": "int32"
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/BookVm"
+              }
+            ]
           },
           "createdAt": {
             "type": [
@@ -1073,6 +1235,75 @@
               "string"
             ],
             "format": "date-time"
+          }
+        }
+      },
+      "IFormFile": {
+        "type": "string",
+        "format": "binary"
+      },
+      "LoanStatus": {
+        "type": "integer"
+      },
+      "LoanVm": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "bookId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "borrowerName": {
+            "type": "string"
+          },
+          "loanDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "returnDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "book": {
+            "$ref": "#/components/schemas/BookVm"
+          },
+          "createdAt": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "status": {
+            "$ref": "#/components/schemas/LoanStatus"
+          },
+          "statusLabel": {
+            "type": "string"
           }
         }
       },
@@ -1184,6 +1415,73 @@
           }
         }
       },
+      "PaginationVmOfLoanVm": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "pageIndex": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "pageSize": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "data": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/LoanVm"
+            }
+          },
+          "pageCount": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "resultByPage": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          }
+        }
+      },
+      "RegisterLoanReturnCommand": {
+        "type": "object",
+        "properties": {
+          "loanId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          }
+        }
+      },
       "UpdateAuthorCommand": {
         "type": "object",
         "properties": {
@@ -1230,6 +1528,9 @@
     },
     {
       "name": "Book"
+    },
+    {
+      "name": "Loan"
     }
   ]
 }

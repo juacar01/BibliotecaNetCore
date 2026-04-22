@@ -18,6 +18,6 @@ public class AuthorVm
     public DateTime? UpdatedAt { get; set; }
 
     // Navigation property for related books
-    public virtual List<BookVm> Books { get; set; } = new List<BookVm>();
+    //public virtual List<BookVm> Books { get; set; } = new List<BookVm>();
 
 }

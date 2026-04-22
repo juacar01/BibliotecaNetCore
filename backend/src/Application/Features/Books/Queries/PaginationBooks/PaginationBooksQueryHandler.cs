@@ -8,7 +8,7 @@ using MediatR;
 
 namespace Biblioteca.Application.Features.Books.Queries.PaginationBooks;
 
-public class PaginationBooksQueryHandler : IRequestHandler<PaginationAuthorsQuery, PaginationVm<BookVm>>
+public class PaginationBooksQueryHandler : IRequestHandler<PaginationBooksQuery, PaginationVm<BookVm>>
 {
 
     private readonly IUnitOfWork _unitOfWork;
@@ -21,7 +21,7 @@ public class PaginationBooksQueryHandler : IRequestHandler<PaginationAuthorsQuer
     }
 
 
-    public async Task<PaginationVm<BookVm>> Handle(PaginationAuthorsQuery request, CancellationToken cancellationToken)
+    public async Task<PaginationVm<BookVm>> Handle(PaginationBooksQuery request, CancellationToken cancellationToken)
     {
         var BookEspecParams = new BookSpecificationParams
         {

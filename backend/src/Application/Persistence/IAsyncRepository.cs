@@ -49,4 +49,6 @@ public interface IAsyncRepository<T> where T : class
     Task<IReadOnlyList<T>> GetAllWithSpec(ISpecification<T> spec);
 
     Task<int> CountAsync(ISpecification<T> spec);
+
+    Task<bool> AnyAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default);
 }

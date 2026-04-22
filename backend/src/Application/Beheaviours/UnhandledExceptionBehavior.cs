@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Biblioteca.Application.Exceptions;
+using MediatR;
 using Microsoft.Extensions.Logging;
 
 
@@ -20,12 +21,19 @@ public class UnhandledExceptionBehavior<TRequest, TResponse>
         try { 
             return await next();
         } catch(Exception ex) {
-        
+
             var requestName = typeof(TRequest).Name;
             _logger.LogError(ex, "Unhandled Exception for Request {Name} {@Request}", requestName, request);
-            throw new Exception("Unhandled exception occurred", ex);
-        }
 
-        return await next();
+            // Permitir que excepciones de negocio conocidas sean manejadas por el controlador/middleware
+            if (ex is ConflictException)
+                throw;
+            if (ex is BadRequestException)
+                throw;
+
+
+            // Re-lanzar la excepción original para preservar stack trace y tipo
+            throw;
+        }
     }
 }
