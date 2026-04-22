@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Api/">
+    <Project Path="src/Api/Biblioteca.Api/Biblioteca.Api.csproj" Id="24381ff2-7cb0-43f3-b299-69d29c1a3d30" />
+  </Folder>
+  <Folder Name="/src/Application/">
+    <Project Path="src/Application/Biblioteca.Application.csproj" />
+  </Folder>
+  <Folder Name="/src/Core/">
+    <Project Path="src/Core/Biblioteca.Domain/Biblioteca.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/Infrastructure/">
+    <Project Path="src/Infrastructure/Biblioteca.Infrastructure.csproj" />
+  </Folder>
+</Solution>

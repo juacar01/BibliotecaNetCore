@@ -1,0 +1,17 @@
+D:\repos\biblioteca\backend\src\Application\bin\Debug\net10.0\Biblioteca.Application.deps.json
+D:\repos\biblioteca\backend\src\Application\bin\Debug\net10.0\Biblioteca.Application.dll
+D:\repos\biblioteca\backend\src\Application\bin\Debug\net10.0\Biblioteca.Application.pdb
+D:\repos\biblioteca\backend\src\Application\bin\Debug\net10.0\Biblioteca.Domain.dll
+D:\repos\biblioteca\backend\src\Application\bin\Debug\net10.0\Biblioteca.Domain.pdb
+D:\repos\biblioteca\backend\src\Application\obj\Debug\net10.0\Biblioteca.Application.csproj.AssemblyReference.cache
+D:\repos\biblioteca\backend\src\Application\obj\Debug\net10.0\Biblioteca.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\biblioteca\backend\src\Application\obj\Debug\net10.0\Biblioteca.Application.AssemblyInfoInputs.cache
+D:\repos\biblioteca\backend\src\Application\obj\Debug\net10.0\Biblioteca.Application.AssemblyInfo.cs
+D:\repos\biblioteca\backend\src\Application\obj\Debug\net10.0\Biblioteca.Application.csproj.CoreCompileInputs.cache
+D:\repos\biblioteca\backend\src\Application\obj\Debug\net10.0\Bibliote.A09E2D7B.Up2Date
+D:\repos\biblioteca\backend\src\Application\obj\Debug\net10.0\Biblioteca.Application.dll
+D:\repos\biblioteca\backend\src\Application\obj\Debug\net10.0\refint\Biblioteca.Application.dll
+D:\repos\biblioteca\backend\src\Application\obj\Debug\net10.0\Biblioteca.Application.pdb
+D:\repos\biblioteca\backend\src\Application\obj\Debug\net10.0\ref\Biblioteca.Application.dll
+D:\repos\biblioteca\backend\src\Application\bin\Debug\net10.0\Biblioteca.Application.runtimeconfig.json
+D:\repos\biblioteca\backend\src\Application\obj\Debug\net10.0\Biblioteca.Application.genruntimeconfig.cache

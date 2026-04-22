@@ -1,0 +1,8 @@
+wwwroot\Uploads\242adb5a-7f57-4a1b-be27-b5e575af7fd6.png
+wwwroot\Uploads\69cc6b5a-6e0f-4702-ba56-e77c9b43ee45.png
+wwwroot\Uploads\863cc2a4-01b2-4f70-85b6-13d973c66bbc.png
+wwwroot\Uploads\873fa3d8-4e83-44b9-baa0-14ea72f39f28.png
+wwwroot\Uploads\b18103eb-7222-43cb-afee-b8461c5c0613.png
+wwwroot\Uploads\b4cb8597-99ec-465d-bf44-201b8a4f7ddb.png
+wwwroot\Uploads\books\9efe3913-ad64-4a8e-ae43-c8c4ca9c627e.png
+wwwroot\Uploads\books\fa10bc0a-d152-4f2e-a809-0ac546a7af8e.png

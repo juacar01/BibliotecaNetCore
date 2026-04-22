@@ -1,0 +1,14 @@
+D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\bin\Debug\net10.0\Biblioteca.Domain.deps.json
+D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\bin\Debug\net10.0\Biblioteca.Domain.dll
+D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\bin\Debug\net10.0\Biblioteca.Domain.pdb
+D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\obj\Debug\net10.0\Biblioteca.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\obj\Debug\net10.0\Biblioteca.Domain.AssemblyInfoInputs.cache
+D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\obj\Debug\net10.0\Biblioteca.Domain.AssemblyInfo.cs
+D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\obj\Debug\net10.0\Biblioteca.Domain.csproj.CoreCompileInputs.cache
+D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\obj\Debug\net10.0\Biblioteca.Domain.dll
+D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\obj\Debug\net10.0\refint\Biblioteca.Domain.dll
+D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\obj\Debug\net10.0\Biblioteca.Domain.pdb
+D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\obj\Debug\net10.0\ref\Biblioteca.Domain.dll
+D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\obj\Debug\net10.0\Biblioteca.Domain.csproj.AssemblyReference.cache
+D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\bin\Debug\net10.0\Biblioteca.Domain.runtimeconfig.json
+D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\obj\Debug\net10.0\Biblioteca.Domain.genruntimeconfig.cache
