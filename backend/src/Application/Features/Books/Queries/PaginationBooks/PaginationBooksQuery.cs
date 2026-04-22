@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Biblioteca.Application.Features.Books.Queries.PaginationBooks;
 
-public class PaginationBooksQuery: PaginationBaseQuery, IRequest<PaginationVm<BookVm>> 
+public class PaginationAuthorsQuery: PaginationBaseQuery, IRequest<PaginationVm<BookVm>> 
 {
     public string? Title { get; set; }
     public int? AuthorId { get; set; }   

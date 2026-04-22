@@ -41,7 +41,7 @@ public class BookController : ControllerBase
 
     [HttpGet("pagination", Name = "PaginationBook")]
     [ProducesResponseType(typeof(PaginationVm<BookVm>), (int)HttpStatusCode.OK)]
-    public async Task<ActionResult<PaginationVm<BookVm>>> PaginationBook([FromQuery] PaginationBooksQuery paginationBooksQuery)
+    public async Task<ActionResult<PaginationVm<BookVm>>> PaginationBook([FromQuery] PaginationAuthorsQuery paginationBooksQuery)
     { 
         var books = await _mediator.Send(paginationBooksQuery);
         return Ok(books);

@@ -171,5 +171,5 @@ D:\repos\biblioteca\backend\src\Api\Biblioteca.Api\bin\Debug\net10.0\MediatR.Con
 D:\repos\biblioteca\backend\src\Api\Biblioteca.Api\bin\Debug\net10.0\FluentValidation.dll
 D:\repos\biblioteca\backend\src\Api\Biblioteca.Api\bin\Debug\net10.0\Biblioteca.Api.staticwebassets.runtime.json
 D:\repos\biblioteca\backend\src\Api\Biblioteca.Api\obj\Debug\net10.0\Biblioteca.Api.MvcApplicationPartsAssemblyInfo.cs
-D:\repos\biblioteca\backend\src\Api\Biblioteca.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 D:\repos\biblioteca\backend\src\Api\Biblioteca.Api\obj\Debug\net10.0\Biblioteca.Api.sourcelink.json
+D:\repos\biblioteca\backend\src\Api\Biblioteca.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

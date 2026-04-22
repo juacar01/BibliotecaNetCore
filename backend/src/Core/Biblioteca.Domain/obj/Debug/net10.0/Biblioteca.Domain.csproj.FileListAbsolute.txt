@@ -12,3 +12,4 @@ D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\obj\Debug\net10.0\ref\Bib
 D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\obj\Debug\net10.0\Biblioteca.Domain.csproj.AssemblyReference.cache
 D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\bin\Debug\net10.0\Biblioteca.Domain.runtimeconfig.json
 D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\obj\Debug\net10.0\Biblioteca.Domain.genruntimeconfig.cache
+D:\repos\biblioteca\backend\src\Core\Biblioteca.Domain\obj\Debug\net10.0\Biblioteca.Domain.sourcelink.json
