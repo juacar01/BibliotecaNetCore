@@ -1,0 +1,60 @@
+
+<section class="box"  >
+  <div class="box-header mb-3">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <h2 class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+        <i class="fa-solid fa-users me-2"></i>  Autores - <span class="ms-2"> {{autorData()?.name + ' ' + autorData()?.lastName}}</span>
+      </h2>
+    </div>
+  </div>
+  <div class="box-body">
+    <form [formGroup]="autorForm" (ngSubmit)="save()">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-control" formControlName="name"
+                 [class.is-invalid]="autorForm.get('name')?.touched && autorForm.get('name')?.invalid">
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Apellido</label>
+          <input type="text" class="form-control" formControlName="lastName"
+                 [class.is-invalid]="autorForm.get('lastName')?.touched && autorForm.get('lastName')?.invalid">
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">País</label>
+          <input type="text" class="form-control" formControlName="country">
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Fecha de Nacimiento</label>
+          <input type="date" class="form-control" formControlName="birthDate">
+        </div>
+
+        <div class="col-12 mb-3">
+          <label class="form-label">Biografía</label>
+          <textarea class="form-control" formControlName="biography" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between mt-4">
+        <button type="button" class="btn btn-primary btn-sm" routerLink="/autores">
+          <i class="cil-arrow-left"></i> Volver
+        </button>
+
+        <div class="d-flex">
+          <button type="button" class="btn btn-secondary" (click)="autorForm.reset()">
+            Limpiar
+          </button>
+
+          <button type="submit" class="btn btn-primary ms-2" [disabled]="isPending()">
+            @if (isPending()) {
+              <span class="spinner-border spinner-border-sm me-1"></span>
+            }
+            Guardar Autor
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

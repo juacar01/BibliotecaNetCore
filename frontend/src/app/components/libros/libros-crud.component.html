@@ -1,0 +1,72 @@
+
+<section class="box"  >
+  <div class="box-header mb-3">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <h2 class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+        <i class="fa-solid fa-book me-2"></i>  Libros - <span class="ms-2"> {{libroData()?.title }}</span>
+      </h2>
+    </div>
+  </div>
+  <div class="box-body mb-5">
+    <form [formGroup]="libroForm" (ngSubmit)="save()">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-control" formControlName="title"
+                 [class.is-invalid]="libroForm.get('title')?.touched && libroForm.get('title')?.invalid">
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Paginas</label>
+          <input type="number" class="form-control" formControlName="numberOfPages"
+                 [class.is-invalid]="libroForm.get('numberOfPages')?.touched && libroForm.get('numberOfPages')?.invalid">
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Genero</label>
+          <input type="text" class="form-control" formControlName="genre">
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Fecha de Publicacion</label>
+          <input type="date" class="form-control" formControlName="publishedDate">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Portada del Libro</label>
+          <input type="file" class="form-control" (change)="onFileSelected($event)" accept="image/*">
+        </div>
+
+        @if (imagePreview()) {
+          <div class="mb-3">
+            <img [src]="imagePreview()" class="img-thumbnail" style="max-height: 200px;">
+          </div>
+        }
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">AutorId</label>
+          <input type="text" class="form-control" formControlName="authorId">
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between mt-4">
+        <button type="button" class="btn btn-primary btn-sm" routerLink="/libros">
+          <i class="cil-arrow-left"></i> Volver
+        </button>
+
+        <div class="d-flex">
+          <button type="button" class="btn btn-secondary" (click)="libroForm.reset()">
+            Limpiar
+          </button>
+
+          <button type="submit" class="btn btn-primary ms-2" [disabled]="isPending()">
+            @if (isPending()) {
+              <span class="spinner-border spinner-border-sm me-1"></span>
+            }
+            Guardar Libro
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

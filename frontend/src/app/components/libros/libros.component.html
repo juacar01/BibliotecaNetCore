@@ -1,0 +1,87 @@
+
+<section class="box"  >
+  <div class="box-header mb-3">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <h2 class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+        <i class="fa-solid fa-book me-2"></i>  Libros
+      </h2>
+      <div class="col-12 col-lg-auto mb-3 mb-lg-0" >
+        <button type="button" class="btn btn-success ml-auto" routerLink="new"><span class="fa fa-plus" aria-hidden="true"  > </span> Agregar</button>
+      </div>
+    </div>
+  </div>
+  <div class="box-body">
+    <div class="" >
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Genero</th>
+          <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+          @for (libro of tableData(); track libro.id) {
+            <tr>
+              <td>{{ libro.id }}</td>
+              <td>{{ libro.title }}</td>
+              <td>{{ libro.genre }}</td>
+              <td class="align-content-end">
+                <div class="btn-group" role="group" aria-label="Acciones de autor">
+                  <button type="button"
+                          class="btn btn-primary btn-sm"
+                          [routerLink]="libro.id.toString()"
+                          title="Editar">
+                    <i class="fa fa-pencil"></i>
+                  </button>
+
+                  <button type="button"
+                          class="btn btn-danger btn-sm"
+                          title="Eliminar">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </div>
+
+
+              </td>
+            </tr>
+          }
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan="4">
+            <div class="d-flex justify-content-between align-items-center">
+
+              <small class="text-muted">
+                Mostrando {{ table()?.resultByPage }} de {{ table()?.count }} registros
+              </small>
+
+              <nav aria-label="Page navigation">
+                <ul class="pagination pagination-sm mb-0">
+                  <li class="page-item" [class.disabled]="table()?.pageIndex === 1">
+                    <button class="page-link" (click)="changePage(table()!.pageIndex - 1)">Anterior</button>
+                  </li>
+
+                  @for (p of [].constructor(table()?.pageCount); track $index) {
+                    <li class="page-item" [class.active]="table()?.pageIndex === ($index + 1)">
+                      <button class="page-link" (click)="changePage($index + 1)">
+                        {{ $index + 1 }}
+                      </button>
+                    </li>
+                  }
+
+                  <li class="page-item" [class.disabled]="table()?.pageIndex === table()?.pageCount">
+                    <button class="page-link" (click)="changePage(table()!.pageIndex + 1)">Siguiente</button>
+                  </li>
+                </ul>
+              </nav>
+
+            </div>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</section>

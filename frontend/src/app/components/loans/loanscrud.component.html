@@ -1,0 +1,60 @@
+
+<section class="box"  >
+  <div class="box-header mb-3">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <h2 class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+        <i class="fa-solid fa-home me-2"></i>  Préstamos
+      </h2>
+    </div>
+  </div>
+  <div class="box-body">
+    <form [formGroup]="loanForm" (ngSubmit)="save()">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Prestatario</label>
+          <input type="text" class="form-control" formControlName="borrowerName"
+                 [class.is-invalid]="loanForm.get('borrowerName')?.touched && loanForm.get('borrowerName')?.invalid">
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Id Libro</label>
+          <input type="number" class="form-control" formControlName="bookId"
+                 [class.is-invalid]="loanForm.get('bookId')?.touched && loanForm.get('bookId')?.invalid">
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Fecha de préstamo</label>
+          <input type="date" class="form-control"
+                 [class.is-invalid]="loanForm.get('loanDate')?.touched && loanForm.get('loanDate')?.invalid"
+                 formControlName="loanDate">
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Fecha de limite</label>
+          <input type="date" class="form-control"
+                 [class.is-invalid]="loanForm.get('dueDate')?.touched && loanForm.get('dueDate')?.invalid || loanForm.errors?.['rangeInvalid']"
+                 formControlName="dueDate">
+        </div>
+
+      </div>
+      <div class="d-flex justify-content-between mt-4">
+        <button type="button" class="btn btn-primary btn-sm" routerLink="/autores">
+          <i class="cil-arrow-left"></i> Volver
+        </button>
+
+        <div class="d-flex">
+          <button type="button" class="btn btn-secondary" (click)="loanForm.reset()">
+            Limpiar
+          </button>
+
+          <button type="submit" class="btn btn-primary ms-2" [disabled]="isPending()">
+            @if (isPending()) {
+              <span class="spinner-border spinner-border-sm me-1"></span>
+            }
+            Guardar Préstamo
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
