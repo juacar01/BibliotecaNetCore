@@ -42,6 +42,11 @@ builder.Services.AddCors(options =>
                                 .AllowAnyMethod();
                       });
 });
+builder.Services.AddSwaggerGen(c =>
+{ 
+    c.EnableAnnotations();
+});
+
 
 var app = builder.Build();
 
@@ -51,10 +56,14 @@ app.UseStaticFiles();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-
+    app.UseSwagger();
     app.UseSwaggerUI(options =>
     {
-        options.SwaggerEndpoint("/openapi/v1.json", "Mi API .NET 10");
+        //options.SwaggerEndpoint("/openapi/v1.json", "Mi API .NET 10");
+        options.DocumentTitle = "My API Explorer";
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
+        options.InjectStylesheet("/swagger-ui/custom.css");
+       
     });
 
 }

@@ -1,15 +1,16 @@
-﻿using Biblioteca.Application.Features.Books.Commands.CreateBook;
-using Biblioteca.Application.Features.Books.Queries.GetBookList;
-using Biblioteca.Application.Features.Books.Queries.Vms;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
-using System.Net;
-using Biblioteca.Api.Services;
-using Biblioteca.Application.Shared.Queries;
-using Biblioteca.Application.Features.Books.Queries.PaginationBooks;
-using Biblioteca.Application.Features.Books.Queries.GetBookById;
+﻿using Biblioteca.Api.Services;
+using Biblioteca.Application.Features.Books.Commands.CreateBook;
 using Biblioteca.Application.Features.Books.Commands.DeleteBook;
 using Biblioteca.Application.Features.Books.Commands.UpdateBook;
+using Biblioteca.Application.Features.Books.Queries.GetBookById;
+using Biblioteca.Application.Features.Books.Queries.GetBookList;
+using Biblioteca.Application.Features.Books.Queries.PaginationBooks;
+using Biblioteca.Application.Features.Books.Queries.Vms;
+using Biblioteca.Application.Shared.Queries;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
+using System.Net;
 
 namespace Biblioteca.Api.Controllers;
 
@@ -28,6 +29,10 @@ public class BookController : ControllerBase
 
 
     [HttpGet("list", Name = "GetBooks")]
+    [SwaggerOperation(
+        Summary = "Retorna el listado completo de Libros",
+        Description = "Retorna el listado completo de libros"
+    )]
     [ProducesResponseType(typeof(IReadOnlyList<BookVm>), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<IReadOnlyList<BookVm>>> GetBooks()
     {
@@ -40,6 +45,10 @@ public class BookController : ControllerBase
     }
 
     [HttpGet("pagination", Name = "PaginationBook")]
+    [SwaggerOperation(
+        Summary = "Retorna los datos de préstamos",
+        Description = "Retorna un listado de prestamos mediante paginacion. ej: pageindex=x, search=dato"
+    )]
     [ProducesResponseType(typeof(PaginationVm<BookVm>), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<PaginationVm<BookVm>>> PaginationBook([FromQuery] PaginationBooksQuery paginationBooksQuery)
     { 
@@ -50,6 +59,10 @@ public class BookController : ControllerBase
 
 
     [HttpPost("create", Name = "CreateBook")]
+    [SwaggerOperation(
+        Summary = "Registra un nuevo libro",
+        Description = "Registra un nuevo libro en la base de datos y realiza el Upload de la imagen en caso de ser enviada."
+    )]
     [ProducesResponseType(typeof(BookVm), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<BookVm>> CreateBook([FromForm] CreateBookCommand request)
     {
@@ -78,6 +91,10 @@ public class BookController : ControllerBase
 
 
     [HttpGet("{id}", Name = "GetBookById")]
+    [SwaggerOperation(
+        Summary = "Retorna los datos de un libro por su ID",
+        Description = "Retorna los datos de un Libro por su ID"
+    )]
     [ProducesResponseType(typeof(BookVm), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<BookVm>> GetBookById(int id)
     {         
@@ -88,6 +105,10 @@ public class BookController : ControllerBase
     }
 
     [HttpDelete("{id}", Name = "DeleteBook")]
+    [SwaggerOperation(
+        Summary = "Elimina un libro por su ID",
+        Description = "Realmente modifica su propiedad IsDeleted a true"
+    )]
     [ProducesResponseType(typeof(BookVm), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<BookVm>> DeleteBook(int id)
     {
@@ -98,6 +119,10 @@ public class BookController : ControllerBase
     }
 
     [HttpPut("{id}", Name = "UpdateBook")]
+    [SwaggerOperation(
+        Summary = "Realiza la operacion de actualizacion de datos de libros",
+        Description = "Realiza la operacion de actuializacion de datos de libros con su upload de imagend e protada en caso de ser enviada"
+    )]
     [ProducesResponseType(typeof(BookVm), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<BookVm>> UpdateBook(int id, [FromForm] UpdateBookCommand request)
     {

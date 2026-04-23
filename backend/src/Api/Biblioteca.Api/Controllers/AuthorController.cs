@@ -8,6 +8,7 @@ using Biblioteca.Application.Features.Authors.Queries.Vms;
 using Biblioteca.Application.Shared.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 
 namespace Biblioteca.Api.Controllers;
@@ -25,6 +26,10 @@ public class AuthorController : ControllerBase
 
 
     [HttpGet("list", Name = "GetAuthors")]
+    [SwaggerOperation(
+        Summary = "Retorna el listado completo de Autores",
+        Description = "Retorna el listado completo de Autores"
+    )]
     [ProducesResponseType(typeof(IReadOnlyList<AuthorVm>), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<IReadOnlyList<AuthorVm>>> GetAuthors()
     {
@@ -39,6 +44,10 @@ public class AuthorController : ControllerBase
 
 
     [HttpGet("pagination", Name = "PaginationAuthor")]
+    [SwaggerOperation(
+        Summary = "Retorna los datos de préstamos",
+        Description = "Retorna un listado de prestamos mediante paginacion. ej: pageindex=x, search=dato"
+    )]
     [ProducesResponseType(typeof(PaginationVm<AuthorVm>), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<PaginationVm<AuthorVm>>> PaginationAuthor([FromQuery] PaginationAuthorsQuery paginationAuthorsQuery  )
     {
@@ -47,6 +56,10 @@ public class AuthorController : ControllerBase
     }
 
     [HttpPost("create", Name = "CreateAuthor")]
+    [SwaggerOperation(
+        Summary = "Registra los datos de un nuevo Autor",
+        Description = "Registra los datos de un Nuevo Autor"
+    )]
     [ProducesResponseType(typeof(AuthorVm), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<AuthorVm>> CreateAuthor([FromBody] CreateAuthorCommand request)
     {
@@ -58,6 +71,10 @@ public class AuthorController : ControllerBase
 
 
     [HttpGet("{id}", Name = "GetAuthorById")]
+    [SwaggerOperation(
+        Summary = "Retorna los datos de un Autor por su ID",
+        Description = "Retorna los datos de un Autor por su Id"
+    )]
     [ProducesResponseType(typeof(AuthorVm), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<AuthorVm>> GetAuthorById(int id)
     {
@@ -68,6 +85,10 @@ public class AuthorController : ControllerBase
     }
 
     [HttpDelete("{id}", Name = "DeleteAuthor")]
+    [SwaggerOperation(
+        Summary = "Elimina un Autor",
+        Description = "Realmente no elimina el autor, sino que establece si propiedad IsDeleted a true"
+    )]
     [ProducesResponseType(typeof(AuthorVm), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<AuthorVm>> DeleteAuthor(int id)
     {
@@ -83,7 +104,7 @@ public class AuthorController : ControllerBase
     {
         if (request == null) return BadRequest();
 
-        request.AuthorId = id; // Aseguramos que el ID del autor a actualizar se establezca correctamente
+        request.AuthorId = id; 
 
         var author = await _mediator.Send(request);
         return Ok(author);

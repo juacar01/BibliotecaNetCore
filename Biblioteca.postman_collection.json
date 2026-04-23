@@ -1,0 +1,689 @@
+{
+  "info": {
+    "_postman_id": "94a2e1f8-5bb9-46be-a76f-834890ca5bd4",
+    "name": "Biblioteca",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1057644"
+  },
+  "item": [
+    {
+      "name": "Authors",
+      "item": [
+        {
+          "name": "Get List Authors",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "text/plain"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/v1/Author/list",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "v1",
+                "Author",
+                "list"
+              ]
+            },
+            "description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:5000/api/v1/Author/list' \\\r\n  -H 'accept: text/plain'"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Author",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"jj benitez\",\r\n    \"lastName\": \"benitez\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/Author/create",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "Author",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Pagination",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "Title",
+                  "value": "Juego de tronos 1",
+                  "type": "text",
+                  "uuid": "b6601a34-1a0f-438b-84d5-b920a6511e7c"
+                },
+                {
+                  "key": "NumberOfPages",
+                  "value": "1000",
+                  "type": "text",
+                  "uuid": "6f86a204-0fd5-4f7c-8ef7-4a1fcd104737"
+                },
+                {
+                  "key": "Genre",
+                  "value": "ficcion",
+                  "type": "text",
+                  "uuid": "23720c90-d94d-4cc0-a7e0-31b320e714d4"
+                },
+                {
+                  "key": "PublishedDate",
+                  "value": "27/10/1981",
+                  "type": "text",
+                  "uuid": "0b157c97-1136-46c1-bb28-70959ac0c826"
+                },
+                {
+                  "key": "Imagen",
+                  "type": "file",
+                  "uuid": "79c918b5-a25b-4a0a-ac21-08579e9a60bc",
+                  "src": "/D:/Data/OneDrive/Pictures/Screenshots 1/Captura de pantalla 2025-09-25 141801.png"
+                },
+                {
+                  "key": "AuthorId",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "68e65299-0953-4b8e-9bb4-5afeb3835a9c"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/Book/pagination",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "Book",
+                "pagination"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"jjuan benitez 2\",\r\n    \"lastName\": \"benitez 2\"\r\n}"
+            },
+            "url": {
+              "raw": "{{url}}/Author/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "Author",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Copy",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/Author/5",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "Author",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "AuthorById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "Title",
+                  "value": "Juego de tronos 1",
+                  "type": "text",
+                  "uuid": "b6601a34-1a0f-438b-84d5-b920a6511e7c"
+                },
+                {
+                  "key": "NumberOfPages",
+                  "value": "1000",
+                  "type": "text",
+                  "uuid": "6f86a204-0fd5-4f7c-8ef7-4a1fcd104737"
+                },
+                {
+                  "key": "Genre",
+                  "value": "ficcion",
+                  "type": "text",
+                  "uuid": "23720c90-d94d-4cc0-a7e0-31b320e714d4"
+                },
+                {
+                  "key": "PublishedDate",
+                  "value": "27/10/1981",
+                  "type": "text",
+                  "uuid": "0b157c97-1136-46c1-bb28-70959ac0c826"
+                },
+                {
+                  "key": "Imagen",
+                  "type": "file",
+                  "uuid": "79c918b5-a25b-4a0a-ac21-08579e9a60bc",
+                  "src": "/D:/Data/OneDrive/Pictures/Screenshots 1/Captura de pantalla 2025-09-25 141801.png"
+                },
+                {
+                  "key": "AuthorId",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "68e65299-0953-4b8e-9bb4-5afeb3835a9c"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/Book/8",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "Book",
+                "8"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Books",
+      "item": [
+        {
+          "name": "Create Book",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "Title",
+                  "value": "Juego de tronos 1",
+                  "type": "text",
+                  "uuid": "b6601a34-1a0f-438b-84d5-b920a6511e7c"
+                },
+                {
+                  "key": "NumberOfPages",
+                  "value": "1000",
+                  "type": "text",
+                  "uuid": "6f86a204-0fd5-4f7c-8ef7-4a1fcd104737"
+                },
+                {
+                  "key": "Genre",
+                  "value": "ficcion",
+                  "type": "text",
+                  "uuid": "23720c90-d94d-4cc0-a7e0-31b320e714d4"
+                },
+                {
+                  "key": "PublishedDate",
+                  "value": "27/10/1981",
+                  "type": "text",
+                  "uuid": "0b157c97-1136-46c1-bb28-70959ac0c826"
+                },
+                {
+                  "key": "Imagen",
+                  "type": "file",
+                  "uuid": "79c918b5-a25b-4a0a-ac21-08579e9a60bc",
+                  "src": "/D:/Data/OneDrive/Pictures/Screenshots 1/Captura de pantalla 2025-09-25 141801.png"
+                },
+                {
+                  "key": "AuthorId",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "68e65299-0953-4b8e-9bb4-5afeb3835a9c"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/Book/create",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "Book",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "Title",
+                  "value": "Juego de tronos 8",
+                  "type": "text",
+                  "uuid": "b6601a34-1a0f-438b-84d5-b920a6511e7c"
+                },
+                {
+                  "key": "NumberOfPages",
+                  "value": "1000",
+                  "type": "text",
+                  "uuid": "6f86a204-0fd5-4f7c-8ef7-4a1fcd104737"
+                },
+                {
+                  "key": "Genre",
+                  "value": "ficcion",
+                  "type": "text",
+                  "uuid": "23720c90-d94d-4cc0-a7e0-31b320e714d4"
+                },
+                {
+                  "key": "PublishedDate",
+                  "value": "27/10/1981",
+                  "type": "text",
+                  "uuid": "0b157c97-1136-46c1-bb28-70959ac0c826"
+                },
+                {
+                  "key": "Imagen",
+                  "type": "file",
+                  "uuid": "79c918b5-a25b-4a0a-ac21-08579e9a60bc",
+                  "src": "/D:/Data/OneDrive/Pictures/Camera Roll/2026/03/20260314_161922000_iOS.png"
+                },
+                {
+                  "key": "AuthorId",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "68e65299-0953-4b8e-9bb4-5afeb3835a9c"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/Book/8",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "Book",
+                "8"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Pagination",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "Title",
+                  "value": "Juego de tronos 1",
+                  "type": "text",
+                  "uuid": "b6601a34-1a0f-438b-84d5-b920a6511e7c"
+                },
+                {
+                  "key": "NumberOfPages",
+                  "value": "1000",
+                  "type": "text",
+                  "uuid": "6f86a204-0fd5-4f7c-8ef7-4a1fcd104737"
+                },
+                {
+                  "key": "Genre",
+                  "value": "ficcion",
+                  "type": "text",
+                  "uuid": "23720c90-d94d-4cc0-a7e0-31b320e714d4"
+                },
+                {
+                  "key": "PublishedDate",
+                  "value": "27/10/1981",
+                  "type": "text",
+                  "uuid": "0b157c97-1136-46c1-bb28-70959ac0c826"
+                },
+                {
+                  "key": "Imagen",
+                  "type": "file",
+                  "uuid": "79c918b5-a25b-4a0a-ac21-08579e9a60bc",
+                  "src": "/D:/Data/OneDrive/Pictures/Screenshots 1/Captura de pantalla 2025-09-25 141801.png"
+                },
+                {
+                  "key": "AuthorId",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "68e65299-0953-4b8e-9bb4-5afeb3835a9c"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/Book/pagination",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "Book",
+                "pagination"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "BookById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "Title",
+                  "value": "Juego de tronos 1",
+                  "type": "text",
+                  "uuid": "b6601a34-1a0f-438b-84d5-b920a6511e7c"
+                },
+                {
+                  "key": "NumberOfPages",
+                  "value": "1000",
+                  "type": "text",
+                  "uuid": "6f86a204-0fd5-4f7c-8ef7-4a1fcd104737"
+                },
+                {
+                  "key": "Genre",
+                  "value": "ficcion",
+                  "type": "text",
+                  "uuid": "23720c90-d94d-4cc0-a7e0-31b320e714d4"
+                },
+                {
+                  "key": "PublishedDate",
+                  "value": "27/10/1981",
+                  "type": "text",
+                  "uuid": "0b157c97-1136-46c1-bb28-70959ac0c826"
+                },
+                {
+                  "key": "Imagen",
+                  "type": "file",
+                  "uuid": "79c918b5-a25b-4a0a-ac21-08579e9a60bc",
+                  "src": "/D:/Data/OneDrive/Pictures/Screenshots 1/Captura de pantalla 2025-09-25 141801.png"
+                },
+                {
+                  "key": "AuthorId",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "68e65299-0953-4b8e-9bb4-5afeb3835a9c"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/Book/8",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "Book",
+                "8"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/Book/6",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "Book",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Loans",
+      "item": [
+        {
+          "name": "Create Loan",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"bookId\": 1,\r\n    \"BorrowerName\": \"JuanMa\",\r\n    \"loanDate\": \"2024-04-22T15:30:00.000Z\",\r\n    \"dueDate\": \"2024-04-21T15:30:00.000Z\"\r\n    \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/Loan/create",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "Loan",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "LoanById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "Title",
+                  "value": "Juego de tronos 1",
+                  "type": "text",
+                  "uuid": "b6601a34-1a0f-438b-84d5-b920a6511e7c"
+                },
+                {
+                  "key": "NumberOfPages",
+                  "value": "1000",
+                  "type": "text",
+                  "uuid": "6f86a204-0fd5-4f7c-8ef7-4a1fcd104737"
+                },
+                {
+                  "key": "Genre",
+                  "value": "ficcion",
+                  "type": "text",
+                  "uuid": "23720c90-d94d-4cc0-a7e0-31b320e714d4"
+                },
+                {
+                  "key": "PublishedDate",
+                  "value": "27/10/1981",
+                  "type": "text",
+                  "uuid": "0b157c97-1136-46c1-bb28-70959ac0c826"
+                },
+                {
+                  "key": "Imagen",
+                  "type": "file",
+                  "uuid": "79c918b5-a25b-4a0a-ac21-08579e9a60bc",
+                  "src": "/D:/Data/OneDrive/Pictures/Screenshots 1/Captura de pantalla 2025-09-25 141801.png"
+                },
+                {
+                  "key": "AuthorId",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "68e65299-0953-4b8e-9bb4-5afeb3835a9c"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/Loan/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "Loan",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Pagination",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "Title",
+                  "value": "Juego de tronos 1",
+                  "type": "text",
+                  "uuid": "b6601a34-1a0f-438b-84d5-b920a6511e7c"
+                },
+                {
+                  "key": "NumberOfPages",
+                  "value": "1000",
+                  "type": "text",
+                  "uuid": "6f86a204-0fd5-4f7c-8ef7-4a1fcd104737"
+                },
+                {
+                  "key": "Genre",
+                  "value": "ficcion",
+                  "type": "text",
+                  "uuid": "23720c90-d94d-4cc0-a7e0-31b320e714d4"
+                },
+                {
+                  "key": "PublishedDate",
+                  "value": "27/10/1981",
+                  "type": "text",
+                  "uuid": "0b157c97-1136-46c1-bb28-70959ac0c826"
+                },
+                {
+                  "key": "Imagen",
+                  "type": "file",
+                  "uuid": "79c918b5-a25b-4a0a-ac21-08579e9a60bc",
+                  "src": "/D:/Data/OneDrive/Pictures/Screenshots 1/Captura de pantalla 2025-09-25 141801.png"
+                },
+                {
+                  "key": "AuthorId",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "68e65299-0953-4b8e-9bb4-5afeb3835a9c"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/Book/pagination",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "Book",
+                "pagination"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Status",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/Loan/2/registerReturn",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "Loan",
+                "2",
+                "registerReturn"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "url",
+      "value": ""
+    }
+  ]
+}
