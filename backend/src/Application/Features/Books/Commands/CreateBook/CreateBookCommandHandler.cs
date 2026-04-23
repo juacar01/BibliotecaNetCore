@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Biblioteca.Application.Exceptions;
 using Biblioteca.Application.Features.Books.Commands.CreateBook;
 using Biblioteca.Application.Features.Books.Queries.Vms;
 using Biblioteca.Application.Persistence;
@@ -22,9 +23,19 @@ public class CreateBookCommandHandler : IRequestHandler<CreateBookCommand, BookV
 
     public async Task<BookVm> Handle(CreateBookCommand request, CancellationToken cancellationToken)
     {
-        var bookEntity = _mapper.Map<Book>(request);
-        await _unitOfWork.Repository<Book>().AddAsync(bookEntity);
 
-        return _mapper.Map<BookVm>(bookEntity);
+        var authorExists = await _unitOfWork.Repository<Author>()
+            .AnyAsync(l => l.Id == request.AuthorId);
+
+        if (!authorExists)
+        {
+            throw new BadRequestException("Author does not exist");
+        }
+
+        var entity = _mapper.Map<Book>(request);
+        await _unitOfWork.Repository<Book>().AddAsync(entity);
+        await _unitOfWork.Complete();
+
+        return _mapper.Map<BookVm>(entity);
     }
 }

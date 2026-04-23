@@ -6,6 +6,7 @@ using Biblioteca.Application.Shared.Queries;
 using Biblioteca.Application.Specifications.Loans;
 using Biblioteca.Domain;
 using MediatR;
+using System.Linq.Expressions;
 
 
 namespace Biblioteca.Application.Features.Loans.Queries.PaginationLoans;
@@ -35,7 +36,10 @@ public class PaginationLoansQueryHandler : IRequestHandler<PaginationLoansQuery,
             LoanDate = request.LoanDate,
             DueDate = request.DueDate
         };
- 
+
+        var includes = new List<Expression<Func<Loan, object>>>();
+        includes.Add(b => b.Book);
+        includes.Add(x => x.Book.Author);
 
         var spec = new LoanSpecification(LoanSpecParams);
         var loans = await _unitOfWork.Repository<Loan>().GetAllWithSpec(spec);

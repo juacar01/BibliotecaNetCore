@@ -31,6 +31,18 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "myAllowSpecificOrigins",
+                      policy =>
+                      {
+                          policy.WithOrigins("*")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+                      });
+});
+
 var app = builder.Build();
 
 app.UseStaticFiles();
@@ -46,6 +58,8 @@ if (app.Environment.IsDevelopment())
     });
 
 }
+
+
 
 app.UseHttpsRedirection();
 
@@ -74,5 +88,7 @@ using (var scope = app.Services.CreateScope())
         logger.LogError(ex, "Ocurrio un error durante la migracion de la base de datos");
     }
 }
+
+app.UseCors("myAllowSpecificOrigins");
 
 app.Run();

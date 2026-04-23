@@ -4,6 +4,7 @@ namespace Biblioteca.Application.Specifications;
 
 public class BaseSpecification<T> : ISpecification<T>
 {
+    private readonly List<Expression<Func<T, object>>> _includes = new();
 
     public BaseSpecification()
     {
@@ -16,7 +17,7 @@ public class BaseSpecification<T> : ISpecification<T>
 
     public Expression<Func<T, bool>>? Criteria { get; }
 
-    public List<Expression<Func<T, object>>> Includes => new List<Expression<Func<T, Object>>>();
+    public List<Expression<Func<T, object>>> Includes => _includes;
 
     public Expression<Func<T, object>>? OrderBy { get; private set;}
 

@@ -1126,6 +1126,14 @@
           "isDeleted": {
             "type": "boolean"
           },
+          "authorId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
           "author": {
             "$ref": "#/components/schemas/AuthorVm"
           },

@@ -1,7 +1,4 @@
-﻿using Biblioteca.Application.Features.Books.Queries.Vms;
-using Biblioteca.Domain;
-
-namespace Biblioteca.Application.Features.Authors.Queries.Vms;
+﻿namespace Biblioteca.Application.Features.Authors.Queries.Vms;
 
 public class AuthorVm
 {

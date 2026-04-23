@@ -18,8 +18,6 @@ public class CreateBookCommandValidator : AbstractValidator<CreateBookCommand>
             .MaximumLength(100).WithMessage("Genre cannot exceed 100 characters.");
         RuleFor(x => x.PublishedDate)
             .LessThanOrEqualTo(DateTime.Now).WithMessage("Published date cannot be in the future.");
-        RuleFor(x => x.CoverImagePath)
-            .MaximumLength(500).WithMessage("Cover image path cannot exceed 500 characters.");
         RuleFor(x => x.AuthorId)
         .NotEmpty().WithMessage("AuthorId is required.")
         .GreaterThan(0).WithMessage("AuthorId must be greater than 0.");

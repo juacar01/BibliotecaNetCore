@@ -87,7 +87,7 @@ public class LoanController : ControllerBase
     {
         if (request == null) return BadRequest();
 
-        request.LoanId = id; // Aseguramos que el ID del prestamo a actualizar se establezca correctamente
+        request.LoanId = id; 
 
         var entity = await _mediator.Send(request);
         return Ok(entity);

@@ -16,6 +16,7 @@ public class LoanSpecification: BaseSpecification<Loan>
         )
     {
         AddInclude(x => x.Book);
+        AddInclude(x => x.Book.Author);
         AddOrderByDescending(x => x.LoanDate);
 
 
